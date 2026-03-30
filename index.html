@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tattoo Consent Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e53935">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="bg-logo"></div>
+
+<div class="container">
+  <div class="header">
+    <h1>Tattoo Consent Form</h1>
+  </div>
+
+    <form id="consentForm">
+
+      <div class="card">
+        <h2>Personal Details</h2>
+
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="date" required>
+      </div>
+
+      <div class="card">
+        <h2>Medical Information</h2>
+
+        <label><input type="checkbox" name="conditions" value="Allergies"> Allergies</label>
+        <label><input type="checkbox" name="conditions" value="Diabetes"> Diabetes</label>
+        <label><input type="checkbox" name="conditions" value="Blood Disorders"> Blood Disorders</label>
+        <label><input type="checkbox" name="conditions" value="Skin Conditions"> Skin Conditions</label>
+        <label><input type="checkbox" name="conditions" value="Pregnancy"> Pregnancy</label>
+        <label><input type="checkbox" name="conditions" value="Epilepsy"> Epilepsy</label>
+        <label><input type="checkbox" name="conditions" value="Heart Condition"> Heart Condition</label>
+        <label><input type="checkbox" name="conditions" value="High Blood Pressure"> High Blood Pressure</label>
+        <label><input type="checkbox" name="conditions" value="Low Blood Pressure"> Low Blood Pressure</label>
+        <label><input type="checkbox" name="conditions" value="Hepatitis"> Hepatitis</label>
+        <label><input type="checkbox" name="conditions" value="HIV"> HIV</label>
+        <label><input type="checkbox" name="conditions" value="Fainting History"> Fainting History</label>
+        <label><input type="checkbox" name="conditions" value="Taking Medication"> Taking Medication</label>
+        <label><input type="checkbox" name="conditions" value="Recent Surgery"> Recent Surgery</label>
+        <label><input type="checkbox" name="conditions" value="Other"> Other</label>
+
+        <textarea placeholder="If yes, please give details"></textarea>
+      </div>
+
+      <div class="card">
+        <h2>Consent</h2>
+
+        <label>
+          <input type="checkbox" id="tattooConsent" required>
+          I confirm I am over 18 and agree to the procedure
+        </label>
+
+        <label>
+          <input type="checkbox" id="marketingConsent">
+          I agree to receive studio offers, updates, and available appointment slots
+        </label>
+      </div>
+
+      <div class="card">
+        <h2>Signature</h2>
+
+        <canvas id="signaturePad" width="350" height="150" style="background:#fff;"></canvas>
+        <button type="button" id="clearSignature">Clear Signature</button>
+      </div>
+
+      <button type="submit">Submit</button>
+      <button type="button" id="viewForms">View Saved Forms</button>
+      <button type="button" id="viewContacts">View Contacts</button>
+
+      <div id="savedForms"></div>
+
+      <input type="text" id="contactSearch" placeholder="Search contacts by name">
+      <div id="savedContacts"></div>
+
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
