@@ -1,0 +1,177 @@
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
+  background-image: none;
+background-color: #0d0d0d;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* BACKGROUND LOGO */
+.bg-logo {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1300px;
+  height: 1300px;
+  background: url("logo.png") no-repeat center center;
+  background-size: contain;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0.15;
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADINGS */
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+/* INPUTS */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  background: rgba(255,255,255,0.92);
+  color: #111;
+}
+
+/* LABELS */
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: #e53935;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #c62828;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* SIGNATURE CANVAS */
+canvas {
+  width: 100% !important;
+  height: 150px;
+  background-color: #ffffff !important;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  display: block;
+}
+
+/* CARDS (FIXED — IMPORTANT) */
+.card {
+  background: rgba(15, 15, 15, 0.5);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(229, 57, 53, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.55);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* IMPROVEMENTS */
+
+.card {
+  box-shadow: 
+    0 0 25px rgba(229, 57, 53, 0.08),
+    0 0 10px rgba(0,0,0,0.6);
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #e53935;
+  margin-left: 10px;
+}
+
+.card:hover {
+  border-color: rgba(229, 57, 53, 0.3);
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+h1 {
+  text-shadow: 0 0 15px rgba(229, 57, 53, 0.2);
+}
+
+/* GOLD ACCENTS */
+
+/* Titles */
+h1, h2 {
+  color: #f5e6c8;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.08),
+    0 0 5px rgba(229, 57, 53, 0.2);
+}
+
+/* Card subtle gold edge */
+.card {
+  border: 1px solid rgba(255, 215, 0, 0.08);
+}
+
+/* Inputs focus (when user clicks) */
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 
+    0 0 8px rgba(255, 215, 0, 0.25),
+    0 0 5px rgba(229, 57, 53, 0.2);
+}
+
+/* Buttons premium highlight */
+button {
+  background: linear-gradient(145deg, #e53935, #b71c1c);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+button:hover {
+  box-shadow: 
+    0 0 15px rgba(255, 215, 0, 0.2),
+    0 0 20px rgba(229, 57, 53, 0.4);
+}
