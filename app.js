@@ -289,3 +289,8 @@ window.addEventListener("scroll", () => {
   const opacity = Math.max(0.02, 0.05 - scrollY / 5000);
   bgLogo.style.opacity = opacity;
 });
+
+document.getElementById("hideRecords").addEventListener("click", function () {
+  document.getElementById("savedForms").innerHTML = "";
+  document.getElementById("savedContacts").innerHTML = "";
+});
