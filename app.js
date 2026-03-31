@@ -302,16 +302,17 @@ document.getElementById("hideRecords").addEventListener("click", function () {
 });
 
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    const intro = document.getElementById("introScreen");
-    if (intro) {
+  const video = document.getElementById("introVideo");
+  const intro = document.getElementById("introScreen");
+
+  if (video && intro) {
+    video.onended = () => {
       intro.style.transition = "opacity 0.8s ease";
       intro.style.opacity = "0";
 
       setTimeout(() => {
         intro.remove();
       }, 800);
-    }
-  }, 3000);
+    };
+  }
 });
-
