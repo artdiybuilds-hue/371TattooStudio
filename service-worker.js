@@ -1,4 +1,4 @@
-const CACHE_NAME = "tattoo-consent-app-v3";
+const CACHE_NAME = "tattoo-consent-app-v4";
 const urlsToCache = [
   "./",
   "./style.css",
