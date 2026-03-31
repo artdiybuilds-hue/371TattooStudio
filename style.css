@@ -190,3 +190,7 @@ input[type="checkbox"] {
 #introScreen {
   display: none !important;
 }
+
+#adminTools {
+  display: none;
+}
