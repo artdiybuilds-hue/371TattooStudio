@@ -296,6 +296,8 @@ window.addEventListener("scroll", () => {
 document.getElementById("hideRecords").addEventListener("click", function () {
   document.getElementById("savedForms").innerHTML = "";
   document.getElementById("savedContacts").innerHTML = "";
+  document.getElementById("contactSearch").value = "";
+  document.getElementById("adminTools").style.display = "none";
 });
 
 // DOB AUTO FORMAT
