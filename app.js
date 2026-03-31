@@ -77,7 +77,13 @@ document.getElementById("consentForm").addEventListener("submit", function (e) {
   const name = document.querySelector('input[placeholder="Full Name"]').value;
   const phone = document.querySelector('input[placeholder="Phone Number"]').value;
   const email = document.querySelector('input[placeholder="Email Address"]').value;
-  const dob = document.querySelector('input[placeholder="dd / mm / yyyy"]').value;
+  const dobInput = document.querySelector('input[type="date"]').value;
+
+let dob = "";
+if (dobInput) {
+  const parts = dobInput.split("-");
+  dob = `${parts[2]}/${parts[1]}/${parts[0]}`;
+}
   const notes = document.querySelector("textarea").value;
   const marketingConsent = document.getElementById("marketingConsent").checked;
 
