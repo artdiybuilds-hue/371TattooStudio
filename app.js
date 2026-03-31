@@ -290,48 +290,11 @@ window.addEventListener("scroll", () => {
   bgLogo.style.opacity = opacity;
 });
 
+// HIDE RECORDS
 document.getElementById("hideRecords").addEventListener("click", function () {
   document.getElementById("savedForms").innerHTML = "";
   document.getElementById("savedContacts").innerHTML = "";
 });
-
-window.addEventListener("load", () => {
-  const video = document.getElementById("introVideo");
-  const intro = document.getElementById("introScreen");
-
-  if (video && intro) {
-    const removeIntro = () => {
-      intro.style.transition = "opacity 0.8s ease";
-      intro.style.opacity = "0";
-
-      setTimeout(() => {
-        if (intro.parentNode) {
-          intro.remove();
-        }
-      }, 800);
-    };
-
-    video.onended = removeIntro;
-    video.onerror = removeIntro;
-
-    setTimeout(removeIntro, 9000);
-  }
-});
-const dobField = document.getElementById("dobField");
-
-if (dobField) {
-  dobField.addEventListener("input", function (e) {
-    let value = e.target.value.replace(/\D/g, "").slice(0, 8);
-
-    if (value.length > 4) {
-      value = value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4);
-    } else if (value.length > 2) {
-      value = value.slice(0, 2) + "/" + value.slice(2);
-    }
-
-    e.target.value = value;
-  });
-}
 
 // DOB AUTO FORMAT
 const dobField = document.getElementById("dobField");
