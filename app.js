@@ -115,10 +115,27 @@ document.getElementById("consentForm").addEventListener("submit", function (e) {
   localStorage.setItem("tattooForms", JSON.stringify(submissions));
   localStorage.setItem("clientContacts", JSON.stringify(contacts));
 
-  alert("Form saved successfully!");
-
-  document.getElementById("consentForm").reset();
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  emailjs.send("service_4gmrjy5", "YOUR_TEMPLATE_ID", {
+    name,
+    phone,
+    email,
+    dob,
+    conditions: conditions.join(", "),
+    notes,
+    marketingConsent: marketingConsent ? "Yes" : "No",
+    date: new Date().toLocaleString()
+  })
+  .then(function () {
+    alert("Form saved & sent to email!");
+    document.getElementById("consentForm").reset();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  })
+  .catch(function (error) {
+    alert("Form saved locally, but email failed.");
+    console.log("EmailJS error:", error);
+    document.getElementById("consentForm").reset();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  });
 });
 
 // VIEW SAVED FORMS
