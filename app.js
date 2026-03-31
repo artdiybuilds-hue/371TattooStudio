@@ -115,7 +115,7 @@ document.getElementById("consentForm").addEventListener("submit", function (e) {
   localStorage.setItem("tattooForms", JSON.stringify(submissions));
   localStorage.setItem("clientContacts", JSON.stringify(contacts));
 
-  emailjs.send("service_4gmrjy5", "template_abcd123", {
+  emailjs.send("service_4gmrjy5", "template_jfyze9l", {
     name,
     phone,
     email,
