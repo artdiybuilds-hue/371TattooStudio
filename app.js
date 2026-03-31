@@ -123,6 +123,16 @@ document.getElementById("consentForm").addEventListener("submit", function (e) {
 
 // VIEW SAVED FORMS
 document.getElementById("viewForms").addEventListener("click", function () {
+  const pin = prompt("Enter PIN to access saved forms:");
+
+  if (pin !== "1983") {
+    alert("Incorrect PIN");
+    return;
+  }
+
+  const savedFormsDiv = document.getElementById("savedForms");
+  const savedContactsDiv = document.getElementById("savedContacts");
+  savedContactsDiv.innerHTML = "";
   const savedFormsDiv = document.getElementById("savedForms");
   const savedContactsDiv = document.getElementById("savedContacts");
   savedContactsDiv.innerHTML = "";
@@ -199,7 +209,16 @@ function showContacts() {
   savedContactsDiv.innerHTML = html;
 }
 
-document.getElementById("viewContacts").addEventListener("click", showContacts);
+document.getElementById("viewContacts").addEventListener("click", function () {
+  const pin = prompt("Enter PIN to access contacts:");
+
+  if (pin !== "1983") {
+    alert("Incorrect PIN");
+    return;
+  }
+
+  showContacts();
+});
 
 // LIVE SEARCH
 document.getElementById("contactSearch").addEventListener("input", function () {
