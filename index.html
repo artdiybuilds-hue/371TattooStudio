@@ -12,10 +12,10 @@
 
   <div class="bg-logo"></div>
 
-<div class="container">
-  <div class="header">
-    <h1>Tattoo Consent Form</h1>
-  </div>
+  <div class="container">
+    <div class="header">
+      <h1>Tattoo Consent Form</h1>
+    </div>
 
     <form id="consentForm">
 
@@ -83,6 +83,12 @@
     </form>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+  </script>
   <script src="app.js"></script>
 
 </body>
