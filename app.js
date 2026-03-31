@@ -305,12 +305,13 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     const intro = document.getElementById("introScreen");
     if (intro) {
-      intro.style.transition = "opacity 0.5s ease";
+      intro.style.transition = "opacity 0.8s ease";
       intro.style.opacity = "0";
 
       setTimeout(() => {
         intro.remove();
-      }, 500);
+      }, 800);
     }
-  }, 2000);
+  }, 3000);
 });
+
