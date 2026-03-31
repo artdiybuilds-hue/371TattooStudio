@@ -180,39 +180,63 @@ input[type="checkbox"] {
   height: 100%;
   background: #000;
   z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 
-/* LOGO */
-.stone-logo {
-  width: 80%;
-  max-width: 400px;
-  height: 400px;
-  background: url("logo.png") center/contain no-repeat;
-  animation: crackOpen 1.5s ease forwards;
+/* TWO STONE HALVES */
+.stone-half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("Stone logo 2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
   animation-delay: 1s;
 }
 
-/* CRACK EFFECT */
-@keyframes crackOpen {
+.stone-half.left {
+  left: 0;
+  background-position: left center;
+  animation-name: splitLeft;
+}
+
+.stone-half.right {
+  right: 0;
+  background-position: right center;
+  animation-name: splitRight;
+}
+
+/* SPLIT ANIMATION */
+@keyframes splitLeft {
   0% {
-    transform: scale(1);
-    opacity: 1;
+    transform: translateX(0) scale(1);
   }
-
+  20% {
+    transform: translateX(-2px) rotate(-0.5deg);
+  }
   40% {
-    transform: scale(1.05) rotate(-1deg);
+    transform: translateX(3px) rotate(0.5deg);
   }
-
-  60% {
-    transform: scale(1.05) rotate(1deg);
-  }
-
   100% {
-    transform: scale(2) translateY(-200px);
-    opacity: 0;
+    transform: translateX(-110%) scale(1.02);
+  }
+}
+
+@keyframes splitRight {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  20% {
+    transform: translateX(2px) rotate(0.5deg);
+  }
+  40% {
+    transform: translateX(-3px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateX(110%) scale(1.02);
   }
 }
