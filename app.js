@@ -332,3 +332,20 @@ if (dobField) {
     e.target.value = value;
   });
 }
+
+// DOB AUTO FORMAT
+const dobField = document.getElementById("dobField");
+
+if (dobField) {
+  dobField.addEventListener("input", function (e) {
+    let value = e.target.value.replace(/\D/g, "").slice(0, 8);
+
+    if (value.length > 4) {
+      value = value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4);
+    } else if (value.length > 2) {
+      value = value.slice(0, 2) + "/" + value.slice(2);
+    }
+
+    e.target.value = value;
+  });
+}
