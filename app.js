@@ -309,3 +309,30 @@ if (dobField) {
     e.target.value = value;
   });
 }
+
+window.addEventListener("load", () => {
+  const video = document.getElementById("introVideo");
+  const intro = document.getElementById("introScreen");
+
+  if (video && intro) {
+    const removeIntro = () => {
+      if (!intro.parentNode) return;
+
+      intro.style.transition = "opacity 0.8s ease";
+      intro.style.opacity = "0";
+
+      setTimeout(() => {
+        if (intro.parentNode) {
+          intro.remove();
+        }
+      }, 800);
+    };
+
+    video.addEventListener("ended", removeIntro);
+    video.addEventListener("error", removeIntro);
+
+    // Safety fallback so the app can never get stuck
+    setTimeout(removeIntro, 9000);
+  }
+});
+
