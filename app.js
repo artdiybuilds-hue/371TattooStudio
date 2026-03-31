@@ -133,9 +133,6 @@ document.getElementById("viewForms").addEventListener("click", function () {
   const savedFormsDiv = document.getElementById("savedForms");
   const savedContactsDiv = document.getElementById("savedContacts");
   savedContactsDiv.innerHTML = "";
-  const savedFormsDiv = document.getElementById("savedForms");
-  const savedContactsDiv = document.getElementById("savedContacts");
-  savedContactsDiv.innerHTML = "";
 
   let submissions = JSON.parse(localStorage.getItem("tattooForms")) || [];
 
@@ -272,10 +269,8 @@ window.addEventListener("scroll", () => {
 
   const scrollY = window.scrollY;
 
-  // Move slightly (parallax effect)
   bgLogo.style.transform = `translateX(-50%) translateY(${scrollY * 0.1}px)`;
 
-  // Fade slightly as you scroll
   const opacity = Math.max(0.02, 0.05 - scrollY / 5000);
   bgLogo.style.opacity = opacity;
 });
