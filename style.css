@@ -204,3 +204,49 @@ input[type="checkbox"] {
   width: auto;
   margin: 0;
 }
+
+/* INTRO SCREEN */
+#introScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* LOGO */
+.stone-logo {
+  width: 80%;
+  max-width: 400px;
+  height: 400px;
+  background: url("logo.png") center/contain no-repeat;
+  animation: crackOpen 1.5s ease forwards;
+  animation-delay: 1s;
+}
+
+/* CRACK EFFECT */
+@keyframes crackOpen {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  40% {
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  60% {
+    transform: scale(1.05) rotate(1deg);
+  }
+
+  100% {
+    transform: scale(2) translateY(-200px);
+    opacity: 0;
+  }
+}
