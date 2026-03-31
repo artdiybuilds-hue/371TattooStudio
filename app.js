@@ -224,13 +224,6 @@ function showContacts() {
 }
 
 document.getElementById("viewContacts").addEventListener("click", function () {
-  const pin = prompt("Enter PIN to access contacts:");
-
-  if (pin !== "1983") {
-    alert("Incorrect PIN");
-    return;
-  }
-
   showContacts();
 });
 
