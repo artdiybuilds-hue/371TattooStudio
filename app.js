@@ -300,3 +300,17 @@ document.getElementById("hideRecords").addEventListener("click", function () {
   document.getElementById("savedForms").innerHTML = "";
   document.getElementById("savedContacts").innerHTML = "";
 });
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const intro = document.getElementById("introScreen");
+    if (intro) {
+      intro.style.transition = "opacity 0.5s ease";
+      intro.style.opacity = "0";
+
+      setTimeout(() => {
+        intro.remove();
+      }, 500);
+    }
+  }, 2000);
+});
