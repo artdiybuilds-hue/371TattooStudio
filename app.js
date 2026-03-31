@@ -145,6 +145,8 @@ document.getElementById("viewForms").addEventListener("click", function () {
     return;
   }
 
+  document.getElementById("adminTools").style.display = "block";
+
   const savedFormsDiv = document.getElementById("savedForms");
   const savedContactsDiv = document.getElementById("savedContacts");
   savedContactsDiv.innerHTML = "";
