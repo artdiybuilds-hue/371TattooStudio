@@ -186,3 +186,7 @@ input[type="checkbox"] {
   object-fit: cover;
   display: block;
 }
+
+#introScreen {
+  display: none !important;
+}
