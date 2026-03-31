@@ -300,17 +300,23 @@ window.addEventListener("load", () => {
   const intro = document.getElementById("introScreen");
 
   if (video && intro) {
-    video.onended = () => {
+    const removeIntro = () => {
       intro.style.transition = "opacity 0.8s ease";
       intro.style.opacity = "0";
 
       setTimeout(() => {
-        intro.remove();
+        if (intro.parentNode) {
+          intro.remove();
+        }
       }, 800);
     };
+
+    video.onended = removeIntro;
+    video.onerror = removeIntro;
+
+    setTimeout(removeIntro, 9000);
   }
 });
-
 const dobField = document.getElementById("dobField");
 
 if (dobField) {
