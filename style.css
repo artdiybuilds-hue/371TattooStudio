@@ -171,7 +171,7 @@ input[type="checkbox"] {
   margin: 0;
 }
 
-/* INTRO SCREEN */
+/* VIDEO INTRO */
 #introScreen {
   position: fixed;
   inset: 0;
@@ -180,141 +180,9 @@ input[type="checkbox"] {
   overflow: hidden;
 }
 
-/* TWO STONE HALVES */
-.stone-half {
-  position: absolute;
-  top: 0;
-  width: 50%;
+#introVideo {
+  width: 100%;
   height: 100%;
-  background-image: url("logo.png");
-  background-repeat: no-repeat;
-  background-size: 200% 100%;
-  animation-duration: 2s;
-  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
-  animation-fill-mode: forwards;
-  animation-delay: 0.8s;
-  will-change: transform, filter, opacity;
-}
-
-.stone-half.left {
-  left: 0;
-  background-position: left center;
-  transform-origin: left center;
-  animation-name: splitLeftDramatic;
-}
-
-.stone-half.right {
-  right: 0;
-  background-position: right center;
-  transform-origin: right center;
-  animation-name: splitRightDramatic;
-}
-
-/* DARK CRACK LINE */
-#introScreen::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 6px;
-  height: 100%;
-  transform: translateX(-50%) scaleY(0);
-  transform-origin: center;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(255,255,255,0.12) 15%,
-    rgba(0,0,0,0.95) 50%,
-    rgba(255,255,255,0.12) 85%,
-    transparent 100%
-  );
-  z-index: 10001;
-  animation: crackLine 0.45s ease-out forwards;
-  animation-delay: 0.55s;
-}
-
-/* FLASH AT CRACK MOMENT */
-#introScreen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.18), transparent 45%);
-  opacity: 0;
-  z-index: 10000;
-  animation: crackFlash 0.35s ease-out forwards;
-  animation-delay: 0.75s;
-}
-
-/* DRAMATIC SPLIT */
-@keyframes splitLeftDramatic {
-  0% {
-    transform: translateX(0) scale(1) rotate(0deg);
-    filter: brightness(1);
-    opacity: 1;
-  }
-  10% {
-    transform: translateX(4px) scale(1.01) rotate(-0.4deg);
-  }
-  20% {
-    transform: translateX(-6px) scale(1.02) rotate(0.5deg);
-  }
-  30% {
-    transform: translateX(8px) scale(1.03) rotate(-0.6deg);
-  }
-  45% {
-    transform: translateX(-10px) scale(1.04) rotate(0.8deg);
-  }
-  100% {
-    transform: translateX(-125%) scale(1.08) rotate(-8deg);
-    filter: brightness(0.7);
-    opacity: 1;
-  }
-}
-
-@keyframes splitRightDramatic {
-  0% {
-    transform: translateX(0) scale(1) rotate(0deg);
-    filter: brightness(1);
-    opacity: 1;
-  }
-  10% {
-    transform: translateX(-4px) scale(1.01) rotate(0.4deg);
-  }
-  20% {
-    transform: translateX(6px) scale(1.02) rotate(-0.5deg);
-  }
-  30% {
-    transform: translateX(-8px) scale(1.03) rotate(0.6deg);
-  }
-  45% {
-    transform: translateX(10px) scale(1.04) rotate(-0.8deg);
-  }
-  100% {
-    transform: translateX(125%) scale(1.08) rotate(8deg);
-    filter: brightness(0.7);
-    opacity: 1;
-  }
-}
-
-@keyframes crackLine {
-  0% {
-    transform: translateX(-50%) scaleY(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-50%) scaleY(1);
-    opacity: 1;
-  }
-}
-
-@keyframes crackFlash {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  object-fit: cover;
+  display: block;
 }
