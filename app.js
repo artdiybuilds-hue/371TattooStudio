@@ -77,13 +77,7 @@ document.getElementById("consentForm").addEventListener("submit", function (e) {
   const name = document.querySelector('input[placeholder="Full Name"]').value;
   const phone = document.querySelector('input[placeholder="Phone Number"]').value;
   const email = document.querySelector('input[placeholder="Email Address"]').value;
-  const dobInput = document.querySelector('input[type="date"]').value;
-
-let dob = "";
-if (dobInput) {
-  const parts = dobInput.split("-");
-  dob = `${parts[2]}/${parts[1]}/${parts[0]}`;
-}
+  const dob = document.getElementById("dobField").value;
   const notes = document.querySelector("textarea").value;
   const marketingConsent = document.getElementById("marketingConsent").checked;
 
@@ -316,3 +310,19 @@ window.addEventListener("load", () => {
     };
   }
 });
+
+const dobField = document.getElementById("dobField");
+
+if (dobField) {
+  dobField.addEventListener("input", function (e) {
+    let value = e.target.value.replace(/\D/g, "").slice(0, 8);
+
+    if (value.length > 4) {
+      value = value.slice(0, 2) + "/" + value.slice(2, 4) + "/" + value.slice(4);
+    } else if (value.length > 2) {
+      value = value.slice(0, 2) + "/" + value.slice(2);
+    }
+
+    e.target.value = value;
+  });
+}
