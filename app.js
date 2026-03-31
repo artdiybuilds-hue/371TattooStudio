@@ -116,21 +116,19 @@ document.getElementById("consentForm").addEventListener("submit", function (e) {
   localStorage.setItem("clientContacts", JSON.stringify(contacts));
 
   emailjs.send("service_4gmrjy5", "template_jfyze9l", {
-    name,
-    phone,
-    email,
-    dob,
-    conditions: conditions.join(", "),
-    notes,
+    name: name,
+    phone: phone,
+    email: email,
+    dob: dob,
+    conditions: conditions.length ? conditions.join(", ") : "None selected",
+    notes: notes || "None",
     marketingConsent: marketingConsent ? "Yes" : "No",
     date: new Date().toLocaleString()
-  })
-  .then(function () {
+  }).then(function () {
     alert("Form saved & sent to email!");
     document.getElementById("consentForm").reset();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-  })
-  .catch(function (error) {
+  }).catch(function (error) {
     alert("Form saved locally, but email failed.");
     console.log("EmailJS error:", error);
     document.getElementById("consentForm").reset();
